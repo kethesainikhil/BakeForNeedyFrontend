@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 import { cn } from "../utils/cn";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export const FloatingNav = ({
   navItems,
@@ -40,6 +41,10 @@ export const FloatingNav = ({
       }
     }
   });
+  const router = useRouter();
+  const handleClick = ()=>{
+    router.push("/userRegister")
+  }
 
   return (
     <AnimatePresence mode="wait">
@@ -72,7 +77,7 @@ export const FloatingNav = ({
             <span className="hidden sm:block text-sm">{navItem.name}</span>
           </Link>
         ))}
-        <button  className=" border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-white dark:text-white px-4 py-2 rounded-full">
+        <button onClick={handleClick} className=" border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-white dark:text-white px-4 py-2 rounded-full">
           <span>Login</span>
           <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
         </button>

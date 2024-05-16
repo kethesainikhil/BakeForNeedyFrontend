@@ -5,9 +5,13 @@ import React from "react";
 import { CardBody, CardContainer, CardItem } from "./UI/threeDCard";
 import Link from "next/link";
 import donation from "../public/donationImage.png"
+import { useRouter } from "next/router";
 
 export function CardComponent() {
+  const router = useRouter();
   return (
+    <div >
+      
     <CardContainer containerClassName="sm:w-1/2 custom-component rounded-xl sm:mx-auto mt-40 mx-4   sm:mt-60 pt-10 sm:pb-4 pb-6" className=" h-full w-full">
       <CardBody className=" mx-auto  text-white w-full  group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] rounded-xl px-6 border  ">
         <CardItem
@@ -31,17 +35,23 @@ export function CardComponent() {
           />
         </CardItem>
         <div className="flex   justify-center items-center sm:pb-10 pb-4 mt-5 sm:mt-20">
-          <CardItem
+          {/* <CardItem
             translateZ={20}
             as="button"
-            className="px-4 py-2 "
+            className="px-4 py-2 mt-4 "
           >
-            <Link href ="/orgRegister"className="bg-gradient-to-r from-green-400 to-yellow-400 
+            <Link href ="/orgRegister"className="bg-gradient-to-r hover:cursor-pointer from-red-400 to-red-500 hover from-green-400 to-yellow-400 
             hover:from-yellow-400 hover:to-yellow-500 focus:outline-none focus:ring-2 
             focus:ring-yellow-500 focus:ring-opacity-50  px-8 py-2 rounded-md text-white font-semibold shadow-md transition-all duration-300">Sign Up</Link>
-          </CardItem>
+          </CardItem> */}
         </div>
       </CardBody>
     </CardContainer>
+    <div className="text-white mt-16 px-6  py-4 bg-gradient-to-r from-green-400 to-yellow-500 w-32  flex mx-auto justify-center">
+      <button onClick={() => router.push("/orgRegister")}>
+        sign up
+      </button>
+    </div>
+    </div>
   );
 }

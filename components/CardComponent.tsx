@@ -47,8 +47,8 @@ export function CardComponent() {
         </div>
       </CardBody>
     </CardContainer>
-    <div className="text-white mt-16 px-6  py-4 bg-gradient-to-r from-green-400 to-yellow-500 w-32  flex mx-auto justify-center">
-      <button onClick={() => router.push("/orgRegister")}>
+    <div className="text-white rounded-lg mt-16 px-6  py-4 bg-gradient-to-r from-green-400 to-yellow-500 w-32  flex mx-auto justify-center">
+      <button className="rounded-lg" onClick={() => router.push("/orgRegister")}>
         sign up
       </button>
     </div>

@@ -1,5 +1,6 @@
+import Image from 'next/image';
 import React, { useRef, useEffect } from 'react';
-
+import poorboy from '../public/poorboy.jpeg'
 export default function Testimonial() {
   const containerRef = useRef(null);
 
@@ -76,17 +77,17 @@ function Card(props) {
       <div className=" custom-component rounded-lg overflow-hidden shadow-lg">
         
       <div className="custom-component dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                {/* <img
+                <Image
                   alt="Service 2"
                   className="w-full h-45 object-cover"
                   height="180"
-                  src="/placeholder.svg"
+                  src={poorboy}
                   style={{
                     aspectRatio: "360/180",
                     objectFit: "cover",
                   }}
                   width="360"
-                /> */}
+                />
                 <div className="p-4 md:p-6">
                   <h3 className="text-lg gradient-text font-semibold mb-2">{title}</h3>
                   <p className="text-gray-500 dark:text-gray-400 text-sm md:text-base">

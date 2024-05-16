@@ -74,3 +74,93 @@
       @apply bg-background text-foreground;
     }
   } */
+  body{
+    background-color: black;
+  }
+  @keyframes gradient-animation {
+    0% {
+      color: #4F46E5; /* Starting color (blue) */
+    }
+    50% {
+      color: #F472B6; /* Ending color (pink) */
+    }
+    100% {
+      color: #4F46E5; /* Back to starting color (blue) */
+    }
+  }
+  
+  .gradient-text {
+    animation: gradient-animation 5s infinite; /* Change '5s' to adjust animation speed */
+  }
+
+  @keyframes border-animation {
+    0% {
+      border-color: #4F46E5; /* Starting color (blue) */
+    }
+    50% {
+      border-color: #F472B6; /* Ending color (pink) */
+    }
+    100% {
+      border-color: #4F46E5; /* Back to starting color (blue) */
+    }
+  }
+
+  .gradient-border {
+    border: 8px solid;
+    border-radius: 5px;
+    animation: border-animation 5s infinite; /* Change '5s' to adjust animation speed */
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 20px; /* Adjust margin as needed */
+  }
+  
+  .segment {
+    height: 100%;
+    transition: width 2s ease-in-out;
+  }
+  
+
+  
+  @keyframes progressBarAnimation {
+    0% {
+      width: 0;
+    }
+    25% {
+      background-color: cyan;
+      width: 25%;
+    }
+    50% {
+      background-color: red;
+      width: 50%;
+    }
+    75% {
+      background-color: yellow;
+      width: 75%;
+    }
+    100% {
+      background-color: green;
+      width: 100%;
+    }
+  }
+  
+  .segment:nth-child(1) {
+    animation: progressBarAnimation 8s infinite; /* Total duration is 8 seconds */
+  }
+  
+  .segment:nth-child(2) {
+    animation: progressBarAnimation 8s infinite -6s; /* Adjust delay to 6s for second segment */
+  }
+  
+  .segment:nth-child(3) {
+    animation: progressBarAnimation 8s infinite -4s; /* Adjust delay to 4s for third segment */
+  }
+  
+  .segment:nth-child(4) {
+    animation: progressBarAnimation 8s infinite -2s; /* Adjust delay to 2s for fourth segment */
+  }
+  .custom-component {
+    border: 4px solid gray;
+    background: linear-gradient(to left, #333, #000);
+  }

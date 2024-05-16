@@ -1,0 +1,16 @@
+@keyframes gradient-animation {
+    0% {
+      color: #4F46E5; /* Starting color (blue) */
+    }
+    50% {
+      color: #F472B6; /* Ending color (pink) */
+    }
+    100% {
+      color: #4F46E5; /* Back to starting color (blue) */
+    }
+  }
+  
+  .gradient-text {
+    animation: gradient-animation 5s infinite; /* Change '5s' to adjust animation speed */
+  }
+  

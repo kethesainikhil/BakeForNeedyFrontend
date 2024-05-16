@@ -44,7 +44,7 @@ const Donar = () => {
             case (data.Category == "Food" &&  !data.Explaination):
               error =  "Explanation is required"
               break;
-            case pickUpPoint.length == 0 && !data.pickUpPoint:
+            case !data.selfDelivery && pickUpPoint.length == 0 && !data.pickUpPoint:
               error =  "pickuppoint is required"
               break;
             default:
@@ -62,11 +62,11 @@ const Donar = () => {
           toast.success("form data successfully submitted")
       }
   return (
-    <div className='border-8 flex flex-col border-blue-400 rounded-md py-10 mx-auto mt-4 max-w-2xl px-10'>
+    <div className='border-8 mx-2 my-4 flex flex-col gradient-border text-white border-blue-400 rounded-md py-10 sm:mx-auto max-w-2xl px-10'>
         <form action="" onSubmit={handleSubmit((data)=>handleFormSubmit(data))}>
-            <div className='flex justify-center items-center'>
-                <label className='w-1/4'  htmlFor="category">Category</label>
-            <select {...register("Category")} className=' rounded-md w-full px-4 py-2 drop-shadow-lg border-2 border-black' name="Category" id="category">
+            <div className='flex flex-col sm:flex-row lg:flex-row xl:flex-row md:flex-row sm:justify-center sm:items-center'>
+                <label className='sm:w-1/4'  htmlFor="category">Category</label>
+            <select {...register("Category")} className=' rounded-md w-full px-4 py-2 drop-shadow-lg border-2 border-gray-600 bg-black text-white' name="Category" id="category">
                 <option value="Food">Food</option>
                 <option value="Clothes">Clothes</option>
                 <option value="Books">Books</option>
@@ -76,8 +76,13 @@ const Donar = () => {
             </div>
             <InputBox placeholder="If Other please specify" errors={errors.OtherInfo} register={register} title="OtherInfo" htmlFor="otherInfo" type="text" />
             <InputBox placeholder="If Food Explain dish & Expiry in Hours" errors={errors.Explaination} register={register} title="Explaination" htmlFor="Explaination" type="text" />
+            <div className='pt-6  text-center flex gap-10 sm:gap-20'>
+        <input type="checkbox" {...register("selfDelivery")} className='h-10 w-10 ' /> 
+        <p className='text-lg text-gray-400 font-bold gradient-text'>Opt to Deliver  By MySelf</p>
+        </div>
         <InputBox placeholder="PickUp point" errors={errors.pickUpPoint} register={register} title="pickUpPoint" htmlFor="pickUpPoint" type="text" /> 
-        <button className='p-2 mt-3 flex  bg-black rounded-md text-white' onClick={(e)=>handleGetCurrentLocation(e)}>Select Current Location</button>
+        
+        <button className='p-2 mt-3 flex mx-auto sm:mx-0 md:mx-0 lg:mx-0 xl:mx-0 bg-blue-500 rounded-md text-white' onClick={(e)=>handleGetCurrentLocation(e)}>Select Current Location</button>
         <div className='mt-3'>
         <button className='p-2 mx-auto flex  bg-blue-500 rounded-md text-white' type='submit'>Register</button>
         </div>

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Head from "next/head";
 import { updateNumber } from "../redux/actions/demoSlice";
 import styles from "../styles/Home.module.css";
+import HomePage from "./homepage";
 
 export default function Home() {
   const [num, updateNum] = useState(0);
@@ -12,9 +13,7 @@ export default function Home() {
     dispatch(updateNumber({ number: num }));
   };
   return (
-    <div>
-    hello
-    </div>
+    <HomePage />
 
   );
 }

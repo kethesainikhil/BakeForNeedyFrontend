@@ -3,7 +3,10 @@ import Donar from './components/Donar'
 
 const donarpage = () => {
   return (
-    <div>
+    <div className='bg-black mt-20 h-screen'>
+      <div className='text-cyan-300 text-4xl gradient-text font-serif py-10 text-center'>
+        Wanna Donate!!! Fill UP This
+      </div>
         <Donar />
     </div>
   )

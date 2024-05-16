@@ -23,9 +23,6 @@ const OrganizationRegister = () => {
             case !data.orgPhone:
               error =  "Phone is required"
               break;
-            case !data.orgWebsite:
-              error =  "Website is required"
-              break;
             case !data.orgCertificate:
               error = "Certificate is required"
               break;
@@ -46,15 +43,15 @@ const OrganizationRegister = () => {
           toast.success("form data successfully submitted")
       }
   return (
-    <div className='border-8 flex flex-col border-blue-400 rounded-md py-10 mx-auto mt-4 max-w-2xl px-10'>
+    <div className='border-8 my-4 mx-2  gradient-border flex flex-col text-white bg-black border-blue-400  rounded-md py-10  sm:mx-auto max-w-2xl px-10'>
         <form action="" onSubmit={handleSubmit((data)=>handleFormSubmit(data))}>
         <InputBox placeholder="Organization Name" errors={errors.orgName} register={register} title="Name" htmlFor="orgName" type="text"  />
         <InputBox placeholder="Organization Email" errors={errors.orgEmail} register={register} pattern="^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$" title="Email" htmlFor="orgEmail" type="email" />
         <InputBox placeholder="Organization Phone" errors={errors.orgPhone} register={register} title="Phone" htmlFor="orgPhone" type="text" />
-        <InputBox placeholder="Organization Website" errors={errors.orgWebsite} register={register} title="Website" htmlFor="orgWebsite" type="text" />
+        <InputBox placeholder="Organization Website (Optional)" errors={errors.orgWebsite} register={register} title="Website" htmlFor="orgWebsite" type="text" />
         <InputBox placeholder="Organization Certificate Number" errors={errors.orgCertificate} register={register} title="Certificate" htmlFor="orgCertificate" type="text" />
         <div className='flex mt-6 p-3'>
-        <textarea className='p-3 border-2 border-black' name="OrganizationAddress" id="" cols="75" rows="10" {...register("OrganizationAddress")} placeholder="Enter your organization's full address"></textarea>
+        <textarea className='p-3 bg-black border-2 border-gray-600' name="OrganizationAddress" id="" cols="75" rows="5" {...register("OrganizationAddress")} placeholder="Enter your organization's full address"></textarea>
         </div>
 
         <div className='mt-3'>

@@ -8,7 +8,7 @@ export function FloatingNavDemo() {
   const navItems = [
     {
       name: "Home",
-      link: "/",
+      link: "/homepage",
       icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
     },
     {
@@ -18,7 +18,7 @@ export function FloatingNavDemo() {
     },
     {
       name: "Donate",
-      link: "/donate",
+      link: "/donarpage",
       icon: (
         <Image height={50} width={50} className="dark:text-white" src={donate} alt="donate" />
       ),

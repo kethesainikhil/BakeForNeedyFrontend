@@ -4,9 +4,9 @@ const InputBox = (props) => {
     const {placeholder} = props
     const {errors} = props
   return (
-    <div className='flex mt-4 items-center justify-center'>
+    <div className='flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row  mt-4 sm:items-center sm:justify-center'>
         <label className=' w-1/4' htmlFor={props.htmlFor}>{props.title}</label>
-        <input className=' w-full border-2 p-2 rounded-xl border-black' {...props.register(props.htmlFor ,{pattern:props.pattern} )}   type={props.type} placeholder={placeholder}
+        <input className=' w-full border-2 p-2 bg-black rounded-xl border-gray-600' {...props.register(props.htmlFor ,{pattern:props.pattern} )}   type={props.type} placeholder={placeholder}
 
          />
          {/* {errors && <p>{errors} is required</p>} */}

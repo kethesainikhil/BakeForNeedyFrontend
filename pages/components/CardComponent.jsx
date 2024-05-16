@@ -8,46 +8,37 @@ import donation from "../../public/donationImage.png"
 
 export function CardComponent() {
   return (
-    <CardContainer containerClassName="w-full" className=" h-full w-full">
-      <CardBody className="bg-gray-50 w-full  group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] rounded-xl px-6 py-4 border  ">
+    <CardContainer containerClassName="sm:w-1/2 custom-component rounded-xl sm:mx-auto mt-40 mx-4   sm:mt-60 pt-10 sm:pb-4 pb-6" className=" h-full w-full">
+      <CardBody className=" mx-auto  text-white w-full  group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] rounded-xl px-6 border  ">
         <CardItem
           translateZ="50"
-          className="text-xl font-bold text-neutral-600  dark:text-white"
+          className="text-3xl gradient-text  mx-auto font-bold text-neutral-600  dark:text-white"
         >
-          Make things float in air
+          NGO / Social Welfare Centers
         </CardItem>
         <CardItem
           as="p"
           translateZ="60"
-          className="text-neutral-500 text-sm mt-4 dark:text-neutral-300"
+          className="text-gray-500 mx-auto text-md mt-4 dark:text-neutral-300"
         >
-          Hover over this card to unleash the power of CSS perspective
+          Join With Us for bringing Smile in Needy People's Face
         </CardItem>
         <CardItem translateZ="100" className="w-full mt-4">
           <Image
             src={donation}
-            height="1000"
-            width="1000"
-            className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+            className="h-60 w-9/12 mx-auto object-cover rounded-xl group-hover/card:shadow-xl"
             alt="thumbnail"
           />
         </CardItem>
-        <div className="flex justify-between items-center sm:pb-10 pb-4 mt-5 sm:mt-20">
-          <CardItem
-            translateZ={20}
-            as={Link}
-            href="https://twitter.com/mannupaaji"
-            target="__blank"
-            className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
-          >
-            Try now →
-          </CardItem>
+        <div className="flex   justify-center items-center sm:pb-10 pb-4 mt-5 sm:mt-20">
           <CardItem
             translateZ={20}
             as="button"
-            className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+            className="px-4 py-2 "
           >
-            Sign up
+            <Link href ="/orgRegister"className="bg-gradient-to-r from-green-400 to-yellow-400 
+            hover:from-yellow-400 hover:to-yellow-500 focus:outline-none focus:ring-2 
+            focus:ring-yellow-500 focus:ring-opacity-50  px-8 py-2 rounded-md text-white font-semibold shadow-md transition-all duration-300">Sign Up</Link>
           </CardItem>
         </div>
       </CardBody>

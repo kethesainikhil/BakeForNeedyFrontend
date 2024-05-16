@@ -4,7 +4,7 @@ import Image from "next/image";
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "./UI/threeDCard";
 import Link from "next/link";
-import donation from "../../public/donationImage.png"
+import donation from "../public/donationImage.png"
 
 export function CardComponent() {
   return (

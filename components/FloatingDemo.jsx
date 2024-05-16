@@ -2,7 +2,7 @@
 import React from "react";
 import { FloatingNav } from "./UI/floating-navbar";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
-import donate from '../../public/donate.png'
+import donate from '../public/donate.png'
 import Image from "next/image";
 export function FloatingNavDemo() {
   const navItems = [

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React, { useState } from 'react';
-import poorboy from "../../public/poorboy4.jpeg"
+import poorboy from "../public/poorboy4.jpeg"
 const HeroSection = () => {        
     return (
         <div className='pt-20 font-serif'>

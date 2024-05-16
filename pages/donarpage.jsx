@@ -1,5 +1,5 @@
 import React from 'react'
-import Donar from './components/Donar'
+import Donar from '../components/Donar'
 
 const donarpage = () => {
   return (

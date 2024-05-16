@@ -1,12 +1,12 @@
 import React from 'react'
-import { LampDemo } from './components/LampDemo'
-import { FloatingNavDemo } from './components/FloatingDemo'
-import HeroSection from './components/HeroSeciton'
-import { CarouselWithContent } from './components/Carousel'
-import ProgressDots from './components/ProgressDots'
-import { CardComponent } from './components/CardComponent'
-import MidHero from './components/MidHero'
-import Testimonial from './components/Testimonial'
+import { LampDemo } from '../components/LampDemo'
+import { FloatingNavDemo } from '../components/FloatingDemo'
+import HeroSection from '../components/HeroSeciton'
+import { CarouselWithContent } from '../components/Carousel'
+import ProgressDots from '../components/ProgressDots'
+import { CardComponent } from '../components/CardComponent'
+import MidHero from '../components/MidHero'
+import Testimonial from '../components/Testimonial'
 
 const HomePage = () => {
   return (

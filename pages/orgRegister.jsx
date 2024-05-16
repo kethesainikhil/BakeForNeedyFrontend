@@ -1,5 +1,5 @@
 import React from 'react'
-import OrganizationRegister from './components/OrganizationRegister'
+import OrganizationRegister from '../components/OrganizationRegister'
 
 const registration = () => {
   return (

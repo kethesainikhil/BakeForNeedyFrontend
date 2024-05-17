@@ -56,7 +56,7 @@ const ProgressDots = () => {
     if (isVisible) {
       const interval = setInterval(() => {
         setProgress(prevProgress => (prevProgress + 25) % 100); // Increase progress by 25% each time, reset to 0 after reaching 100%
-      }, 2000); // Change every 2 seconds
+      }, 4000); // Change every 2 seconds
 
       return () => clearInterval(interval);
     }

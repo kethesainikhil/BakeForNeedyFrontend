@@ -3,9 +3,8 @@ import { SiInstagram, SiYoutube, SiX, SiGithub } from "@icons-pack/react-simple-
 const Footer = () => {
     return (
       <div className="bottom-0 sm:h-48 w-full p-4 bg-neutral-900 dark:bg-slate-900 px-6 lg:px-36 print:hidden">
-        <div className="md:max-w-screen-2xl mt-4 mx-auto flex flex-row items-start justify-between w-full">
-          <div className="flex flex-col md:flex-row w-3/5 md:justify-between">
-            <div className=" sm:ml-21  gradient-text text-white text-5xl my-auto text-center ">
+        <div className="md:max-w-screen-2xl  mt-4 mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between justify-start w-full">
+            <div className=" sm:ml-21  text-purple-600 text-5xl sm:my-auto sm:text-center ">
                 Beak for Needy
             </div>
             <div className="flex flex-col  justify-center my-8 md:my-0">
@@ -20,7 +19,6 @@ const Footer = () => {
                 Privacy Policy
               </Link>
             </div>
-          </div>
   
               <div className="flex flex-col justify-center sm:justify-start  my-auto pt-4 sm:pt-0 sm:my-0">
               <h4 className="text-neutral-200 font-semibold mb-2 sm:mb-2">Follow us</h4>

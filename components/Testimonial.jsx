@@ -11,7 +11,7 @@ export default function Testimonial() {
     // Function to start the scrolling animation
     const startScroll = () => {
       scrollInterval = setInterval(() => {
-        container.scrollLeft += 5; // Adjust this value to control the scrolling speed
+        container.scrollLeft += 2; // Adjust this value to control the scrolling speed
         if (container.scrollLeft >= container.scrollWidth / 2) {
           container.scrollLeft = 0;
         }
@@ -49,14 +49,14 @@ export default function Testimonial() {
         </div>
         <div className="overflow-x-hidden -mx-4 md:-mx-6" ref={containerRef}>
           <div className="inline-flex gap-4 md:gap-6 lg:gap-8 relative">
-          <Card title="card1" info="Connects NGOS to the Needy People" />
+          <Card title="card1" info="Connects NGOS to the People who are in Needy" />
             <Card title="card2" info="Connects Social Welfare Centers to the Needy People" />
             {/* Your original card components */}
             <Card title="card3" info="Deliver Donations to the Needy People" />
             <Card title="card4" info="Bridge between Common People and Needy People"/>
-            <Card title="card5" info="Provides Food by Raising Donations" />
+            <Card title="card5" info="Provides Food by Collecting from varios Places" />
             {/* Duplicate card components */}
-            <Card title="card1" info="Connects NGOS to Needy People" />
+            <Card title="card1" info="Connects NGOS to the People who are in Needy" />
             <Card title="card2" info="Connects Social Welfare Centers to the Needy People" />
             {/* Your original card components */}
             <Card title="card3" info="Deliver Donations to the Needy People" />

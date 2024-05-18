@@ -43,7 +43,7 @@ const OrganizationRegister = () => {
           toast.success("form data successfully submitted")
       }
   return (
-    <div className='border-8 my-4 mx-2  gradient-border flex flex-col text-white bg-black border-blue-400  rounded-md py-10  sm:mx-auto max-w-2xl px-10'>
+    <div className='border-8 my-4 mx-2  border-purple-500  flex flex-col text-white bg-black  rounded-md py-10  sm:mx-auto max-w-2xl px-10'>
         <form action="" onSubmit={handleSubmit((data)=>handleFormSubmit(data))}>
         <InputBox placeholder="Organization Name" errors={errors.orgName} register={register} title="Name" htmlFor="orgName" type="text"  />
         <InputBox placeholder="Organization Email" errors={errors.orgEmail} register={register} pattern="^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$" title="Email" htmlFor="orgEmail" type="email" />
@@ -55,7 +55,7 @@ const OrganizationRegister = () => {
         </div>
 
         <div className='mt-3'>
-        <button className='p-2 mx-auto flex  bg-blue-500 rounded-md text-white' type='submit'>Register</button>
+        <button className='p-2 mx-auto flex hover:bg-gradient-to-tr hover:from-pink-500 hover:to-purple-500   bg-gradient-to-r from-purple-500 to-pink-500  rounded-md text-white' type='submit'>Register</button>
         </div>
         <Toaster />
         </form>

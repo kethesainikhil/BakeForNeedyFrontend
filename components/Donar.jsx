@@ -12,25 +12,40 @@ const Donar = () => {
       } = useForm()
       const [pickUpPoint,setPickUpPoint] = useState("")
       const handleGetCurrentLocation = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(
-            (position) => {
-              const latitude = position.coords.latitude;
-              const longitude = position.coords.longitude;
-              // You can use any geocoding service to convert coordinates to human-readable address
-              // For this example, let's just set it as coordinates
-              setPickUpPoint(`Latitude: ${latitude}, Longitude: ${longitude}`);
-            },
-            (error) => {
-              console.error('Error getting current location:', error);
-              alert('Error getting current location. Please try again.');
-            }
-          );
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    // Use coordinates for further processing or display
+                    setPickUpPoint(`Latitude: ${latitude}, Longitude: ${longitude}`);
+                },
+                (error) => {
+                    let errorMessage = 'Error getting current location. Please try again.';
+                    switch (error.code) {
+                        case error.PERMISSION_DENIED:
+                            errorMessage = 'User denied the request for Geolocation.';
+                            break;
+                        case error.POSITION_UNAVAILABLE:
+                            errorMessage = 'Location information is unavailable.';
+                            break;
+                        case error.TIMEOUT:
+                            errorMessage = 'The request to get user location timed out.';
+                            break;
+                        case error.UNKNOWN_ERROR:
+                            errorMessage = 'An unknown error occurred.';
+                            break;
+                    }
+                    console.error('Geolocation error:', errorMessage);
+                },
+                { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+            );
         } else {
-          alert('Geolocation is not supported by this browser.');
+            alert('Geolocation is not supported by this browser.');
         }
-      };
+    };
+    
       const handleFormSubmit = (data) =>{
           console.log(data)
           let error = ''
@@ -62,7 +77,7 @@ const Donar = () => {
           toast.success("form data successfully submitted")
       }
   return (
-    <div className='border-8 mx-2 my-4 flex flex-col gradient-border text-white border-blue-400 rounded-md py-10 sm:mx-auto max-w-2xl px-10'>
+    <div className='border-8 mx-2 my-4 flex flex-col  border-purple-500 text-white  rounded-md py-10 sm:mx-auto max-w-2xl px-10'>
         <form action="" onSubmit={handleSubmit((data)=>handleFormSubmit(data))}>
             <div className='flex flex-col sm:flex-row lg:flex-row xl:flex-row md:flex-row sm:justify-center sm:items-center'>
                 <label className='sm:w-1/4'  htmlFor="category">Category</label>
@@ -82,9 +97,9 @@ const Donar = () => {
         </div>
         <InputBox placeholder="PickUp point" errors={errors.pickUpPoint} register={register} title="pickUpPoint" htmlFor="pickUpPoint" type="text" /> 
         
-        <button className='p-2 mt-3 flex mx-auto sm:mx-0 md:mx-0 lg:mx-0 xl:mx-0 bg-blue-500 rounded-md text-white' onClick={(e)=>handleGetCurrentLocation(e)}>Select Current Location</button>
+        <button className='p-2 mt-3  flex mx-auto sm:mx-0 md:mx-0 lg:mx-0 xl:mx-0 bg-blue-500 rounded-md text-white' onClick={(e)=>handleGetCurrentLocation(e)}>Select Current Location</button>
         <div className='mt-3'>
-        <button className='p-2 mx-auto flex  bg-blue-500 rounded-md text-white' type='submit'>Register</button>
+        <button className='p-2 mx-auto flex  hover:bg-gradient-to-tr hover:from-pink-500 hover:to-purple-500   bg-gradient-to-r from-purple-500 to-pink-500  rounded-md text-white' type='submit'>Register</button>
         </div>
         <Toaster />
         </form>

@@ -4,7 +4,7 @@ import OrganizationRegister from '../components/OrganizationRegister'
 const registration = () => {
   return (
     <div className='bg-black mt-20 pb-10'>
-      <div className='text-center gradient-text py-10 text-4xl font-serif '>
+      <div className='text-center text-purple-500 py-10 text-4xl font-serif '>
         Register your Organization
       </div>
       <OrganizationRegister />

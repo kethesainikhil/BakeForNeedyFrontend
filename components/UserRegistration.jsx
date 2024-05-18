@@ -37,7 +37,7 @@ const UserRegistration = () => {
           toast.success("form data successfully submitted")
       }
   return (
-    <div className='border-8 flex flex-col border-blue-400 rounded-md py-10 mx-auto mt-4 max-w-2xl px-10'>
+    <div className='border-8 mx-4 flex flex-col border-purple-500 rounded-md py-10 text-gray-200 sm:mx-auto mt-4 max-w-2xl px-10'>
         <form action="" onSubmit={handleSubmit((data)=>handleFormSubmit(data))}>
         <InputBox placeholder="User Name" register={register} errors = {errors.userName} title="Name" htmlFor="userName" type="text" />
         <InputBox placeholder="User Email" register={register} errors = {errors.userEmail} title="Email" htmlFor="userEmail" type="email" />
@@ -45,7 +45,7 @@ const UserRegistration = () => {
         <InputBox placeholder="User Occupation" register={register} errors = {errors.userOccupation} title="Occupation" htmlFor="userOccupation" type="text" />
 
         <div className='mt-3'>
-        <button className='p-2 mx-auto flex  bg-blue-500 rounded-md text-white' type='submit'>Register</button>
+        <button className='p-2 mx-auto flex  hover:bg-gradient-to-tr hover:from-pink-500 hover:to-purple-500   bg-gradient-to-r from-purple-500 to-pink-500  rounded-md text-white' type='submit'>Register</button>
         </div>
         </form>
         <Toaster / >

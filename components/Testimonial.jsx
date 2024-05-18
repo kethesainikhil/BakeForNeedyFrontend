@@ -13,7 +13,7 @@ export default function Testimonial() {
       scrollInterval = setInterval(() => {
         container.scrollLeft += 2; // Adjust this value to control the scrolling speed
         if (container.scrollLeft >= container.scrollWidth / 2) {
-          container.scrollLeft = 0;
+          container.scrollLeft = 5;
         }
       },15); // Adjust the interval for smoother or faster scrolling
     };
@@ -45,7 +45,7 @@ export default function Testimonial() {
     <section className="py-12 md:py-16 lg:py-20 relative">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mb-8 md:mb-10 lg:mb-12">
-          <h2 className="text-2xl text-gray-400 text-center font-bold tracking-tight md:text-3xl lg:text-4xl">What We Do</h2>
+          <h2 className="text-2xl text-center text-purple-500 font-bold tracking-tight md:text-3xl lg:text-4xl">What We Do</h2>
         </div>
         <div className="overflow-x-hidden -mx-4 md:-mx-6" ref={containerRef}>
           <div className="inline-flex gap-4 md:gap-6 lg:gap-8 relative">
@@ -89,7 +89,7 @@ function Card(props) {
                   width="360"
                 />
                 <div className="p-4 md:p-6">
-                  <h3 className="text-lg gradient-text font-semibold mb-2">{title}</h3>
+                  <h3 className="text-lg text-pink-500 font-semibold mb-2">{title}</h3>
                   <p className="text-gray-500 dark:text-gray-400 text-sm md:text-base">
                     {info}
                   </p>

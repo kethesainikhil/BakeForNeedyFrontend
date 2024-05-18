@@ -16,7 +16,7 @@ export function CardComponent() {
       <CardBody className=" mx-auto  text-white w-full sm:w-3/4 sm:py-2 group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] rounded-xl px-6 border  ">
         <CardItem
           translateZ="50"
-          className="text-3xl gradient-text my-0 sm:my-2 pt-2 sm:pt-0 mx-auto font-bold text-neutral-600  dark:text-white"
+          className="text-3xl text-pink-500 my-0 sm:my-2 pt-2 sm:pt-0 mx-auto font-bold "
         >
           NGO / Social Welfare Centers
         </CardItem>

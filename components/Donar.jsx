@@ -3,7 +3,9 @@ import React, { useState } from 'react'
 import InputBox from './InputBox'
 import { useForm } from "react-hook-form"
 import toast,{Toaster} from 'react-hot-toast'
+import { useRouter } from 'next/router'
 const Donar = () => {
+    const router = useRouter();
     const {
         register,
         handleSubmit,
@@ -75,6 +77,9 @@ const Donar = () => {
           console.log(errors)
           console.log(data);
           toast.success("form data successfully submitted")
+          setTimeout(() => {
+            router.push('/successpage')
+          }, 1000);
       }
   return (
     <div className='border-8 mx-2 my-4 flex flex-col  border-purple-500 text-white  rounded-md py-10 sm:mx-auto max-w-2xl px-10'>

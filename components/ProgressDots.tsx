@@ -63,10 +63,10 @@ const ProgressDots = () => {
   }, [isVisible]);
 
   return (
-    <div className="progress-bar  px-4 mx-auto" ref={progressBarRef}>
+    <div className="progress-bar   mx-auto" ref={progressBarRef}>
       <div className="segment " style={{ width: `${progress}%`, animation: isVisible ? 'progressBarAnimation 8s infinite' : 'none' }}>
       </div>
-      <div className="text h-40 mr-2 hidden border-4 border-gray-400  rounded-md sm:flex sm:flex-col absolute mt-2 text-gray-400 sm:max-w-xs items-center text-center px-4 py-2  " style={
+      <div className="text w-1/4  h-40 hidden border-4 border-gray-400  rounded-md sm:flex sm:flex-col absolute mt-2 text-gray-400  items-center text-center px-4 py-2  " style={
         { left: `${progress}%` 
         
         }
@@ -77,9 +77,9 @@ const ProgressDots = () => {
         <p>{details[progress / 25].Info}</p>
       
       </div>
-      <div className="text sm:hidden md:hidden lg:hidden xl:hidden rounded-md  flex flex-col  border-4 border-gray-500  mt-2  mr-4  absolute text-white  items-center text-center  " >
+      <div className=" h-32 mx-2  sm:hidden md:hidden lg:hidden xl:hidden rounded-md  flex flex-col border-2 border-gray-500  mt-2   absolute text-white  text-center  " >
         <h1 className={`text-lg `}>Step {progress / 25 + 1}</h1>
-        <p className='text-xl font-bold text-pink-500 '>{details[progress / 25].title}</p>
+        <p className='text-lg font-bold text-pink-500 '>{details[progress / 25].title}</p>
         <p>{details[progress / 25].Info}</p>
       
       </div>

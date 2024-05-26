@@ -10,27 +10,27 @@ import { useRouter } from "next/router";
 export function CardComponent() {
   const router = useRouter();
   return (
-    <div >
+    <div className="mx-2" >
       
-    <CardContainer containerClassName="sm:w-1/2 custom-component rounded-xl sm:mx-auto mt-40 mx-4   sm:mt-60 pt-10 sm:pb-4 pb-6" className=" h-full w-full">
-      <CardBody className=" mx-auto  text-white w-full sm:w-3/4 sm:py-2 group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] rounded-xl px-6 border  ">
+    <CardContainer containerClassName=" md:w-3/4 w-full sm:hidden md:flex custom-component rounded-xl sm:mx-auto mt-40 px-2   sm:mt-60 pt-10 sm:pb-4 pb-6" className=" h-full w-full">
+      <CardBody className=" sm:mx-auto   text-white sm:w-3/4 sm:py-2 group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] rounded-xl px-6 border  ">
         <CardItem
           translateZ="50"
-          className="text-3xl text-pink-500 my-0 sm:my-2 pt-2 sm:pt-0 mx-auto font-bold "
+          className="sm:text-3xl  text-center mx-auto text-lg text-pink-500 my-0 sm:my-2 pt-2 sm:pt-0  font-bold "
         >
           NGO / Social Welfare Centers
         </CardItem>
         <CardItem
           as="p"
           translateZ="60"
-          className="text-gray-500 mx-auto text-md mt-4 dark:text-neutral-300"
+          className="text-gray-500  mx-auto text-md mt-4 dark:text-neutral-300"
         >
           Join With Us for bringing Smile in Needy People's Face
         </CardItem>
-        <CardItem translateZ="100" className="w-full mt-4">
+        <CardItem translateZ="100" className="w-full mt-4 ">
           <Image
             src={donation}
-            className="sm:h-60 h-48 w-9/12 mx-auto object-cover rounded-xl group-hover/card:shadow-xl"
+            className="sm:h-60 md:h-52 lg:w-8/12 h-48 w-9/12 mx-auto object-cover rounded-xl group-hover/card:shadow-xl"
             alt="thumbnail"
           />
         </CardItem>

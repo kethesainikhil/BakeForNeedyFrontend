@@ -64,13 +64,12 @@ const ProgressDots = () => {
 
   return (
     <div className="progress-bar   mx-auto" ref={progressBarRef}>
-      <div className="segment " style={{ width: `${progress}%`, animation: isVisible ? 'progressBarAnimation 8s infinite' : 'none' }}>
+      <div className="segment  " style={{ width: `${progress}%`, animation: isVisible ? 'progressBarAnimation 8s infinite' : 'none' }}>
       </div>
-      <div className="text w-1/4  h-40 hidden border-4 border-gray-400  rounded-md sm:flex sm:flex-col absolute mt-2 text-gray-400  items-center text-center px-4 py-2  " style={
+      <div className="text w-1/4 h-36 hidden border-4 border-gray-400  rounded-md sm:flex sm:flex-col absolute mt-2 text-gray-400  items-center text-center px-4 py-2  " style={
         { left: `${progress}%` 
         
         }
-        
         }>
         <h1 className={`text-lg `}>Step {progress / 25 + 1}</h1>
         <p className='text-xl font-bold gradient-text '>{details[progress / 25].title}</p>

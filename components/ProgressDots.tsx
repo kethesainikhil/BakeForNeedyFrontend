@@ -77,7 +77,7 @@ const ProgressDots = () => {
         <p>{details[progress / 25].Info}</p>
       
       </div>
-      <div className=" h-32 mx-2  sm:hidden md:hidden lg:hidden xl:hidden rounded-md  flex flex-col border-2 border-gray-500  mt-2   absolute text-white  text-center  " >
+      <div className=" h-32 px-2 mx-2  sm:hidden md:hidden lg:hidden xl:hidden rounded-md  flex flex-col border-2 border-gray-500  mt-2   absolute text-white  text-center  " >
         <h1 className={`text-lg `}>Step {progress / 25 + 1}</h1>
         <p className='text-lg font-bold text-pink-500 '>{details[progress / 25].title}</p>
         <p>{details[progress / 25].Info}</p>

@@ -43,7 +43,7 @@ const OrganizationRegister = () => {
           toast.success("form data successfully submitted")
       }
   return (
-    <div className='border-8 my-4 mx-2  border-purple-500  flex flex-col text-white bg-black  rounded-md py-10  sm:mx-auto max-w-2xl px-10'>
+    <div className='border-8 my-4 mx-2  border-gray-500  flex flex-col text-white bg-black  rounded-md py-10  sm:mx-auto max-w-2xl px-10'>
         <form action="" onSubmit={handleSubmit((data)=>handleFormSubmit(data))}>
         <InputBox placeholder="Organization Name" errors={errors.orgName} register={register} title="Name" htmlFor="orgName" type="text"  />
         <InputBox placeholder="Organization Email" errors={errors.orgEmail} register={register} pattern="^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$" title="Email" htmlFor="orgEmail" type="email" />

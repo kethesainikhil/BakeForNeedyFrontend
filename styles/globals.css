@@ -3,6 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 /* 
+
   @layer base {
     :root {
       --background: 0 0% 100%;
@@ -201,5 +202,10 @@
   animation: bucketEffect 1.5s infinite;
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
   

@@ -1,7 +1,7 @@
 import React from 'react'
 
 const InputBox = (props) => {
-    const {placeholder} = props
+    const {placeholder,style} = props
     const {errors} = props
   return (
     <div className='flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row  mt-4 sm:items-center sm:justify-center'>

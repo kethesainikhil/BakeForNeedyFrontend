@@ -7,7 +7,7 @@ const ProgressDots = () => {
   const details = [
     {
         "title": "Donate",
-        "Info":"Click On Donate button at the top of the page",
+        "Info":"Click on the Donate button that is there on the navbar",
         "color":"cyan"
     },
     {

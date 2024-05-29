@@ -4,8 +4,13 @@ import InputBox from './InputBox'
 import { useForm } from "react-hook-form"
 import toast,{Toaster} from 'react-hot-toast'
 import { useRouter } from 'next/router'
+import {useDispatch} from "react-redux"
+import { addDonationAsync } from '../redux/actions/donation/donationSlice'
 const Donar = () => {
   const[isShowAdressBar,setIsShowAdressBar] = useState(true);
+  const dispatch = useDispatch()
+
+  const [imageUrl, setImageUrl] = useState(null);
     const router = useRouter();
     const {
         register,
@@ -14,6 +19,18 @@ const Donar = () => {
         formState: { errors },
       } = useForm()
       const [pickUpPoint,setPickUpPoint] = useState("")
+      const handleChange = (event) => {
+        const file = event.target.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setImageUrl(reader.result);
+            };
+            reader.readAsDataURL(file);
+        }
+        console.log(imageUrl)
+    };
       const handleGetCurrentLocation = (e) => {
         e.preventDefault();
         if (navigator.geolocation) {
@@ -72,8 +89,10 @@ const Donar = () => {
           data.coordinates = pickUpPoint
           console.log(errors)
           console.log(data);
+          dispatch(addDonationAsync(data));
           toast.success("form data successfully submitted")
           setTimeout(() => {
+
             router.push('/successpage')
           }, 1000);
       }
@@ -83,11 +102,11 @@ const Donar = () => {
             <div className='flex flex-col sm:flex-row lg:flex-row xl:flex-row md:flex-row sm:justify-center sm:items-center'>
                 <label className='sm:w-1/4'  htmlFor="category">Category</label>
             <select {...register("Category")} className=' rounded-md w-full px-4 py-2 drop-shadow-lg border-2 border-gray-600 bg-black text-white' name="Category" id="category">
-                <option value="Food">Food</option>
-                <option value="Clothes">Clothes</option>
-                <option value="Books">Books</option>
-                <option value="Toys">Toys</option>
-                <option value="Other">Other</option>
+                <option value="food">Food</option>
+                <option value="clothes">Clothes</option>
+                <option value="books">Books</option>
+                <option value="toys">Toys</option>
+                <option value="other">Other</option>
             </select>
             </div>
             <InputBox placeholder="If Other please specify" errors={errors.OtherInfo} register={register} title="OtherInfo" htmlFor="otherInfo" type="text" />
@@ -99,7 +118,7 @@ const Donar = () => {
         <p className='text-lg text-gray-400 font-bold gradient-text'>Opt to Deliver  By MySelf</p>
         </div>
 <div className={`${!isShowAdressBar ? "hidden" : "block"}`}>
-<div className='flex flex-col sm:flex-row gap-10  mt-4'>
+<div className='flex flex-col sm:flex-row sm:gap-10 gap-4  sm:mt-4 mt-2'>
             <div className='flex sm:w-1/2 flex-col sm:flex-row lg:flex-row xl:flex-row md:flex-row sm:justify-center sm:items-center'>
                 <label className='sm:w-1/4'  htmlFor="State">State</label>
             <select {...register("State")} className=' rounded-md w-full px-4 py-2 drop-shadow-lg border-2 border-gray-600 bg-black text-white' name="State" id="State">
@@ -107,24 +126,24 @@ const Donar = () => {
                 <option value="Karnataka">Karnataka</option>
                 <option value="Tamilnadu">Tamilnadu</option>
                 <option value="Telangana">Telangana</option>
-                <option value="Other">Other</option>
             </select>
             </div>
             <div className='flex sm:w-1/2 flex-col sm:flex-row lg:flex-row xl:flex-row md:flex-row sm:justify-center sm:items-center'>
                 <label className='sm:w-1/4'  htmlFor="City">City</label>
             <select {...register("City")} className=' rounded-md w-full px-4 py-2 drop-shadow-lg border-2 border-gray-600 bg-black text-white' name="City" id="City">
                 <option value="Anantapur">Anantapur</option>
-                <option value="Guntur">Guntur</option>
+                <option value="Bangalore">Bangalore</option>
                 <option value="Hyderabad">Hyderabad</option>
                 <option value="Chennai">Chennai</option>
-                <option value="Other">Other</option>
+  
             </select>
             </div>
             </div>
             
         <InputBox placeholder="Enter Your Complete Address " errors={errors.pickUpPoint} register={register} title="Address" htmlFor="pickUpPoint" type="text" /> 
-        <button className='p-2 mt-3  flex mx-auto sm:mx-0 md:mx-0 lg:mx-0 xl:mx-0 bg-blue-500 rounded-md text-white' onClick={(e)=>handleGetCurrentLocation(e)}>Select Current Location</button>
+       
 </div>
+
         <div className='mt-3'>
         <button className='p-2 mx-auto flex  hover:bg-gradient-to-tr hover:from-pink-500 hover:to-purple-500   bg-gradient-to-r from-purple-500 to-pink-500  rounded-md text-white' type='submit'>Register</button>
         </div>

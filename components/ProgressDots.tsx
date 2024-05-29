@@ -82,6 +82,7 @@ const ProgressDots = () => {
         <p>{details[progress / 25].Info}</p>
       
       </div>
+      
 
     </div>
   );

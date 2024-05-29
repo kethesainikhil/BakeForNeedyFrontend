@@ -9,20 +9,26 @@ import {
 import { cn } from "../utils/cn";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
+import {useDispatch} from "react-redux"
+import { orgLogout } from "../../redux/actions/donation/donationSlice"; 
 export const FloatingNav = ({
   navItems,
   className,
+  button,
+  setButton
 }: {
   navItems: {
     name: string;
     link: string;
     icon?: JSX.Element;
-  }[];
+  }[],
+  button:string;
+  setButton:React.Dispatch<React.SetStateAction<string>>
   className?: string;
 }) => {
   const { scrollYProgress } = useScroll();
 
+const dispatch = useDispatch();
   const [visible, setVisible] = useState(true);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
@@ -43,7 +49,16 @@ export const FloatingNav = ({
   });
   const router = useRouter();
   const handleClick = ()=>{
-    router.push("/userRegister")
+    if(button == "Login"){
+      router.push("/orgLogin")
+
+    }
+    else{
+      dispatch(orgLogout())
+      localStorage.removeItem("orgDetails");
+      setButton("Login")
+      router.push("/orgLogin")
+    }
   }
 
   return (
@@ -78,7 +93,7 @@ export const FloatingNav = ({
           </Link>
         ))}
         <button onClick={handleClick} className=" border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-white dark:text-white px-4 py-2 rounded-full">
-          <span>Login</span>
+          <span>{button}</span>
           <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
         </button>
       </motion.div>

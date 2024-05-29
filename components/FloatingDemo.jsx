@@ -1,10 +1,13 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FloatingNav } from "./UI/floating-navbar";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 import donate from '../public/donate.png'
 import Image from "next/image";
+import { useSelector } from "react-redux";
 export function FloatingNavDemo() {
+  const orgDetails = useSelector((state) => state.donation.OrgDetails);
+  const[button,setButton] = useState("Login")
   const navItems = [
     {
       name: "Home",
@@ -24,9 +27,14 @@ export function FloatingNavDemo() {
       ),
     },
   ];
+  useEffect(() => {
+    if(orgDetails?.orgId || localStorage.getItem("orgDetails")){
+      setButton("Logout")
+    }
+  }, [orgDetails]);
   return (
     <div className="relative  w-full">
-      <FloatingNav navItems={navItems} />
+      <FloatingNav navItems={navItems} button={button} setButton={setButton} />
     </div>
   );
 }

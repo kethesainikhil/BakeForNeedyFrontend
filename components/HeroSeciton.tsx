@@ -1,7 +1,9 @@
 import Image from 'next/image'
 import React, { useState } from 'react';
 import poorboy from "../public/poorboy4.jpeg"
-const HeroSection = () => {        
+import { useRouter } from 'next/router';
+const HeroSection = () => {   
+    const router = useRouter();     
     return (
         <div className='pt-20 font-serif'>
 
@@ -16,6 +18,12 @@ const HeroSection = () => {
                           </span></p>
 
                     </div>
+
+<div className="relative text-white rounded-lg mt-16 px-6  py-4 bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-tr hover:from-pink-500 hover:to-purple-500 w-32  flex mx-auto justify-center">
+      <button className="rounded-lg" onClick={() => router.push("/donarpage")}>
+        Donate
+      </button>
+    </div>
                 </div>
 
                 <div>

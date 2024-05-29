@@ -1,4 +1,4 @@
-
+'use client'
 import React from 'react'
 import DonationIdComponent from '../../components/DonationIdComponent'
 const donationIdPage = ({donationId}) => {

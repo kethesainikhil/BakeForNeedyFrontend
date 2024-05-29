@@ -1,7 +1,7 @@
 export async function addDonationApi (data){
   console.log(data,"data in api")
 
-  return fetch(`${process.env.BACKEND_URL}/donation`,{
+  return fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/donation`,{
     method:"POST",
     headers:{   
       "Content-Type":"application/json"
@@ -19,7 +19,7 @@ export async function addDonationApi (data){
 export async function orgRegistrationApi (data){
   console.log(data,"data in api")
 
-  return fetch(`${process.env.BACKEND_URL}/OrgRegister`,{
+  return fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/OrgRegister`,{
     method:"POST",
     headers:{   
       "Content-Type":"application/json"
@@ -39,7 +39,7 @@ export async function orgRegistrationApi (data){
 export async function orgLoginApi (data){
   console.log(data,"data in api")
 
-  return fetch(`${process.env.BACKEND_URL}/OrgLogin`,{
+  return fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/OrgLogin`,{
     method:"POST",
     headers:{   
       "Content-Type":"application/json"
@@ -58,7 +58,7 @@ export async function orgLoginApi (data){
 }
 export async function claimDonationApi (data){
   const{id,orgId} = data;
-  return fetch(`${process.env.BACKEND_URL}/updateDonation/${id}`,{
+  return fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/updateDonation/${id}`,{
     method:"PATCH",
     headers:{   
       "Content-Type":"application/json"
@@ -76,7 +76,7 @@ export async function claimDonationApi (data){
 }
 export async function sendEmailApi (data){
   const {sellerId,buyerId,propertyId} = data
-  return fetch(`${import.meta.env.VITE_BACKEND_URL}/property/sendEmail`,{
+  return fetch(`${import.meta.env.VITE_NEXT_PUBLIC_BACKEND_URL}/property/sendEmail`,{
     method:"POST",
     headers:{   
       "Content-Type":"application/json"
@@ -94,7 +94,7 @@ export async function sendEmailApi (data){
   })
 }
 export async function getPropertyApi (id){
-  return fetch(`${import.meta.env.VITE_BACKEND_URL}/property/getProperties/${id}`,{
+  return fetch(`${import.meta.env.VITE_NEXT_PUBLIC_BACKEND_URL}/property/getProperties/${id}`,{
     method:"GET",
     headers:{   
       "Content-Type":"application/json"
@@ -108,7 +108,7 @@ export async function getPropertyApi (id){
   })
 }
 export async function getDonationByIdApi (id){
-  return fetch(`${process.env.BACKEND_URL}/getDonationById/${id}`,{
+  return fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/getDonationById/${id}`,{
     method:"GET",
     headers:{   
       "Content-Type":"application/json"
@@ -123,7 +123,7 @@ export async function getDonationByIdApi (id){
   })
 }
 export async function getAllPropertiesApi (){
-  return fetch(`${import.meta.env.VITE_BACKEND_URL}/property/getAllProperties`,{
+  return fetch(`${import.meta.env.VITE_NEXT_PUBLIC_BACKEND_URL}/property/getAllProperties`,{
     method:"GET",
     headers:{   
       "Content-Type":"application/json"
@@ -140,7 +140,7 @@ export async function getAllPropertiesApi (){
 export async function updatePropertyApi (data){
   const{id} = data;
   delete data.id
-  return fetch(`${import.meta.env.VITE_BACKEND_URL}/property/updateProperty/${id}`,{
+  return fetch(`${import.meta.env.VITE_NEXT_PUBLIC_BACKEND_URL}/property/updateProperty/${id}`,{
     method:"PATCH",
     headers:{   
       "Content-Type":"application/json"

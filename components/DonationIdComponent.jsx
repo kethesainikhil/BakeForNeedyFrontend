@@ -28,7 +28,7 @@ const router = useRouter();
       if(donationId){
         dispatch(getDonationByIdAsync(donationId))
       }
-    },[donationId,])
+    },[donationId])
   return (
     <div className='text-center flex justify-center items-center text-white flex-col h-screen'>
 {

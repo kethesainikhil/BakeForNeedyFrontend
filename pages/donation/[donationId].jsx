@@ -8,7 +8,7 @@ const donationIdPage = () => {
   const { donationId } = router.query
   return (
     <div>
-        <DonationIdComponent donationId={donationId} />
+    {donationId && <DonationIdComponent donationId={donationId} />}
     </div>
   )
 }

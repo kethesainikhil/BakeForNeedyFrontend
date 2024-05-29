@@ -1,7 +1,7 @@
 export async function addDonationApi (data){
   console.log(data,"data in api")
 
-  return fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/donation`,{
+  return fetch(`${process.env.BACKEND_URL}/donation`,{
     method:"POST",
     headers:{   
       "Content-Type":"application/json"
@@ -19,7 +19,7 @@ export async function addDonationApi (data){
 export async function orgRegistrationApi (data){
   console.log(data,"data in api")
 
-  return fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/OrgRegister`,{
+  return fetch(`${process.env.BACKEND_URL}/OrgRegister`,{
     method:"POST",
     headers:{   
       "Content-Type":"application/json"
@@ -39,7 +39,7 @@ export async function orgRegistrationApi (data){
 export async function orgLoginApi (data){
   console.log(data,"data in api")
 
-  return fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/OrgLogin`,{
+  return fetch(`${process.env.BACKEND_URL}/OrgLogin`,{
     method:"POST",
     headers:{   
       "Content-Type":"application/json"
@@ -58,7 +58,7 @@ export async function orgLoginApi (data){
 }
 export async function claimDonationApi (data){
   const{id,orgId} = data;
-  return fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/updateDonation/${id}`,{
+  return fetch(`${process.env.BACKEND_URL}/updateDonation/${id}`,{
     method:"PATCH",
     headers:{   
       "Content-Type":"application/json"
@@ -108,10 +108,7 @@ export async function getPropertyApi (id){
   })
 }
 export async function getDonationByIdApi (id){
-  console.log(id,"id in api")
-  console.log("hi first hello world")
-  console.log(process.env,"process env ")
-  return fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/getDonationById/${id}`,{
+  return fetch(`${process.env.BACKEND_URL}/getDonationById/${id}`,{
     method:"GET",
     headers:{   
       "Content-Type":"application/json"

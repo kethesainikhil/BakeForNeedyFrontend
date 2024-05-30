@@ -13,6 +13,7 @@ function MyApp({ Component, pageProps }) {
       <FloatingNavDemo />
 
       <Component {...pageProps} />
+      <Analytics />
       <Footer />
       </ThemeProvider>
     </Provider>

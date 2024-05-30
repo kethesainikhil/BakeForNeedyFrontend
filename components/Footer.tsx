@@ -5,7 +5,7 @@ const Footer = () => {
       <div className="bottom-0  sm:h-48 w-full p-4 bg-neutral-900 dark:bg-slate-900 px-6 lg:px-36 print:hidden">
         <div className="md:max-w-screen-2xl  mt-4 mx-auto flex flex-col sm:flex-row sm:items-start sm:justify-between justify-start w-full">
             <div className=" sm:ml-21  text-purple-600 text-5xl sm:my-auto sm:text-center ">
-                Beak for Needy
+                Bake for Needy
             </div>
             <div className="flex flex-col  justify-center my-8 md:my-0">
               <h3 className="font-semibold text-purple-600 mb-2">Quick Links</h3>

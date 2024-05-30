@@ -1,6 +1,12 @@
 import Image from 'next/image';
 import React, { useRef, useEffect } from 'react';
-import poorboy from '../public/poorboy.jpeg'
+import donate from '../public/donation.jpg'
+import ngo from '../public/ngo.png'
+import delivery from '../public/delivery.png'
+import bridge from "../public/bridge.png"
+import connection from "../public/connecting.png"
+
+
 export default function Testimonial() {
   const containerRef = useRef(null);
 
@@ -49,19 +55,19 @@ export default function Testimonial() {
         </div>
         <div className="overflow-x-hidden -mx-4 md:-mx-6" ref={containerRef}>
           <div className="inline-flex gap-4 md:gap-6 lg:gap-8 relative">
-          <Card title="Connecting Ngo's" info="Connects NGOS to the People who are in Needy" />
-            <Card title="Connecting SWC's" info="Connects Social Welfare Centers to the Needy People" />
+          <Card src={connection} title="Connecting Ngo's" info="Connects NGOS to the People who are in Needy" />
+            <Card  src={donate} title="Connecting SWC's" info="Connects Social Welfare Centers to the Needy People" />
             {/* Your original card components */}
-            <Card title="Delivering Donations" info="Deliver Donations to the Needy People" />
-            <Card title="Brdige the Gap" info="Bridge between Common People and Needy People"/>
-            <Card title="Food Collections" info="Provides Food by Collecting from varios Places" />
+            <Card src={delivery} title="Delivering Donations" info="Deliver Donations to the Needy People" />
+            <Card src={bridge} title="Brdige the Gap" info="Bridge between Common People and Needy People"/>
+            <Card  src={ngo} title="Food Collections" info="Provides Food by Collecting from varios Places" />
             {/* Duplicate card components */}
-            <Card title="Connecting Ngo's" info="Connects NGOS to the People who are in Needy" />
-            <Card title="Connecting SWC's" info="Connects Social Welfare Centers to the Needy People" />
+            <Card src={connection} title="Connecting Ngo's" info="Connects NGOS to the People who are in Needy" />
+            <Card  src={donate} title="Connecting SWC's" info="Connects Social Welfare Centers to the Needy People" />
             {/* Your original card components */}
-            <Card title="Delivering Donations" info="Deliver Donations to the Needy People" />
-            <Card title="Brdige the Gap" info="Bridge between Common People and Needy People"/>
-            <Card title="Food Collections" info="Provides Food by Collecting from varios Places" />
+            <Card src={delivery} title="Delivering Donations" info="Deliver Donations to the Needy People" />
+            <Card src={bridge} title="Brdige the Gap" info="Bridge between Common People and Needy People"/>
+            <Card  src={ngo} title="Food Collections" info="Provides Food by Collecting from varios Places" />
 
           </div>
         </div>
@@ -71,7 +77,7 @@ export default function Testimonial() {
 }
 
 function Card(props) {
-    const{title,info} = props
+    const{title,info,src} = props
   return (
     <div className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[360px] card">
       <div className=" custom-component rounded-lg overflow-hidden shadow-lg">
@@ -81,7 +87,7 @@ function Card(props) {
                   alt="Service 2"
                   className="w-full h-45 object-cover"
                   height="180"
-                  src={poorboy}
+                  src={src}
                   style={{
                     aspectRatio: "360/180",
                     objectFit: "cover",

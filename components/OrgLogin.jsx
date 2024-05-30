@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { orgLoginAsync } from '../redux/actions/donation/donationSlice'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import { cookies } from 'next/headers'
 const OrgLogin = () => {
     const {
         register,
@@ -18,7 +19,6 @@ const OrgLogin = () => {
       const dispatch = useDispatch();
       const orgDetails = useSelector((state)=> state.donation.OrgDetails)
       const handleFormSubmit = (data) =>{
-          console.log(data)
           let error = ''
           switch (true) {
             case !data.orgEmail:
@@ -40,7 +40,6 @@ const OrgLogin = () => {
       }
       const router = useRouter();
       useEffect(()=>{
-        console.log(orgDetails,"org Details")
         if(orgDetails?.msg){
           setLoading(false)
           toast.error(orgDetails.msg)

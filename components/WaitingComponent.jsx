@@ -1,6 +1,8 @@
+import { useRouter } from 'next/router'
 import React from 'react'
 
 const WaitingComponent = () => {
+  const router = useRouter();
   return (
     <div className="flex h-screen flex-col px-6 items-center justify-center">
         <h1 className='text-purple-400 font-semibold sm:text-3xl text-xl'>Please wait 24 hours</h1>

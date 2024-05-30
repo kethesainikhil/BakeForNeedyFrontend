@@ -29,7 +29,6 @@ const Donar = () => {
             };
             reader.readAsDataURL(file);
         }
-        console.log(imageUrl)
     };
       const handleGetCurrentLocation = (e) => {
         e.preventDefault();
@@ -49,7 +48,6 @@ const Donar = () => {
     };
     
       const handleFormSubmit = (data) =>{
-          console.log(data)
           let error = ''
           switch (true) {
             case (!data.Category):
@@ -87,8 +85,7 @@ const Donar = () => {
             return;
           }
           data.coordinates = pickUpPoint
-          console.log(errors)
-          console.log(data);
+
           dispatch(addDonationAsync(data));
           toast.success("form data successfully submitted")
           setTimeout(() => {
@@ -145,7 +142,7 @@ const Donar = () => {
 </div>
 
         <div className='mt-3'>
-        <button className='p-2 mx-auto flex  hover:bg-gradient-to-tr hover:from-pink-500 hover:to-purple-500   bg-gradient-to-r from-purple-500 to-pink-500  rounded-md text-white' type='submit'>Register</button>
+        <button className='py-2 px-4 p mx-auto flex  hover:bg-gradient-to-tr hover:from-pink-500 hover:to-purple-500   bg-gradient-to-r from-purple-500 to-pink-500  rounded-md text-white' type='submit'>Register</button>
         </div>
         <Toaster />
         </form>

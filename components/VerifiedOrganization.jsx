@@ -1,6 +1,8 @@
-import React from 'react'
 
+import { useRouter } from 'next/router'
+import React from 'react'
 const VerifiedOrganization = () => {
+const router = useRouter();
   return (
     <div className="flex h-screen flex-col px-6 items-center justify-center">
         <h1 className='text-purple-400 font-semibold sm:text-3xl text-xl'>Thank You for Waiting</h1>

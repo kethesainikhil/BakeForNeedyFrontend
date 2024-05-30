@@ -19,7 +19,6 @@ const OrganizationRegister = () => {
       const orgDetails = useSelector((state)=>state.donation.OrgDetails)
       const dispatch = useDispatch();
       const handleFormSubmit = (data) =>{
-          console.log(data)
           let error = ''
           switch (true) {
             case (!data.orgName):
@@ -56,7 +55,6 @@ const OrganizationRegister = () => {
           setLoading(false);
       }
       useEffect(()=>{
-        console.log(orgDetails,"org Details")
         if(orgDetails?.orgId){
           localStorage.setItem("orgDetails",JSON.stringify(orgDetails))
           setLoading(true);
@@ -69,7 +67,6 @@ const OrganizationRegister = () => {
           }
         }
       },[orgDetails])
-      console.log(orgDetails,"out of the scope")
   return (
     <div>
       <div className='border-8 my-4 mx-2  border-gray-500  flex flex-col text-white bg-black  rounded-md py-10  sm:mx-auto max-w-2xl px-10'>

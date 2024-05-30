@@ -5,7 +5,6 @@ import React, { useEffect } from 'react'
 import {useDispatch , useSelector} from "react-redux"
 import { donationClaimAsync, getDonationByIdAsync, increment } from '../redux/actions/donation/donationSlice';
 const DonationIdComponent = ({donationId}) => {
-  console.log(process.env,"process")
 const router = useRouter();
     const dispatch = useDispatch();
     const donationData = useSelector((state)=>state.donation.donationData)

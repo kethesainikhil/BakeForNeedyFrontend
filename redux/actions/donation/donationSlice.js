@@ -16,9 +16,7 @@ const initialState = {
 export const getDonationByIdAsync = createAsyncThunk(
   "donation/getDonationById",
   async (id) => {
-    console.log(id,"id in async")
     const response = await getDonationByIdApi(id);
-    console.log(response,"response in async")
     // The value we return becomes the `fulfilled` action payload
     return response.data;
   }
@@ -26,9 +24,7 @@ export const getDonationByIdAsync = createAsyncThunk(
 export const addDonationAsync = createAsyncThunk(
   "donation/addDonation",
   async (data) => {
-    console.log(data,"data in async")
     const response = await addDonationApi(data);
-    console.log(response,"response in async")
     // The value we return becomes the `fulfilled` action payload
     return response.data;
   }
@@ -36,9 +32,7 @@ export const addDonationAsync = createAsyncThunk(
 export const orgRegistrationAsync = createAsyncThunk(
   "donation/OrgRegister",
   async (data) => {
-    console.log(data,"data in async")
     const response = await orgRegistrationApi(data);
-    console.log(response,"response in async")
     // The value we return becomes the `fulfilled` action payload
     return response;
   }
@@ -46,9 +40,7 @@ export const orgRegistrationAsync = createAsyncThunk(
 export const orgLoginAsync = createAsyncThunk(
   "donation/orgLogin",
   async (data) => {
-    console.log(data,"data in async")
     const response = await orgLoginApi(data);
-    console.log(response,"response in async")
     // The value we return becomes the `fulfilled` action payload
     return response;
   }
@@ -57,9 +49,7 @@ export const orgLoginAsync = createAsyncThunk(
 export const donationClaimAsync = createAsyncThunk(
   "donation/claim",
   async (data) => {
-    console.log(data,"data in async")
     const response = await claimDonationApi(data);
-    console.log(response,"response in async")
     // The value we return becomes the `fulfilled` action payload
     return response;
   }
@@ -182,7 +172,6 @@ export const propertySlice = createSlice({
       })
       .addCase(orgRegistrationAsync.fulfilled, (state, action) => {
         state.status = "completed";
-        console.log(action.payload,'action')
         state.OrgDetails = action.payload
       })
       .addCase(orgLoginAsync.pending, (state) => {
@@ -190,7 +179,6 @@ export const propertySlice = createSlice({
       })
       .addCase(orgLoginAsync.fulfilled, (state, action) => {
         state.status = "completed";
-        console.log(action.payload,'action')
         state.OrgDetails = action.payload
       })
 

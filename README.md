@@ -21,9 +21,3 @@ This template is created using create-next-app and modules added to this are
 - Tailwind CSS
 - Redux
 - Redux-Toolkit
-
-## **Author**
-
-- **Website** - [JayaSrikar K](https://jayasrikark.netlify.app/)
-- **Twitter** - [@jayasrikark](https://twitter.com/jayasrikark)
-- **LinkedIn** - [jayasrikark](https://www.linkedin.com/in/jayasrikark/)
